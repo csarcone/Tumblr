@@ -12,16 +12,22 @@ import AlamofireImage
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var posts: [[String: Any]] = []
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var photostableView: UITableView!
     
-    
+   /* @IBAction func onTapGesture(_ sender: Any) {
+        performSegue(withIdentifier: "PhotosViewSegue", sender: self)
+            
+        PhotoCell.userInteractionEnabled = true
+    }
+    */
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        photostableView.delegate = self
+        photostableView.dataSource = self
+        photostableView.rowHeight = 250
         // Do any additional setup after loading the view.
         fetchPhotos()
         
@@ -30,7 +36,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
-        if let indexPath = tableView.indexPath(for: cell) {
+        if let indexPath = photostableView.indexPath(for: cell) {
             let vc = segue.destination as! PhotoDetailsViewController
             let post = posts[indexPath.row]
             vc.photoURL = post
@@ -62,7 +68,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 
                 // TODO: Reload the table view
-                self.tableView.reloadData()
+                self.photostableView.reloadData()
             }
         }
         task.resume()
@@ -89,23 +95,10 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             let originalSize = photo["original_size"] as! [String: Any]
             let urlString = originalSize["url"] as! String
             let url = URL(string: urlString)
-            cell.photoImageView.af_setImage(withURL: url!)
+            cell.photoViewCell.af_setImage(withURL: url!)
         }
         
         return cell
-    }
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+}
+
 }
