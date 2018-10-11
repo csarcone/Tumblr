@@ -14,13 +14,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var photostableView: UITableView!
     
-   /* @IBAction func onTapGesture(_ sender: Any) {
-        performSegue(withIdentifier: "PhotosViewSegue", sender: self)
-            
-        PhotoCell.userInteractionEnabled = true
-    }
-    */
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

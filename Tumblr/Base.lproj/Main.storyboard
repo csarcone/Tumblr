@@ -39,6 +39,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photoViewCell" destination="gAe-ia-6ig" id="Qez-qH-9aS"/>
+                                            <segue destination="zlk-tE-QfE" kind="show" id="Djw-Nt-rnv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -50,11 +51,9 @@
                     <navigationItem key="navigationItem" title="Dashboard" id="cO8-nI-cKe"/>
                     <connections>
                         <outlet property="photostableView" destination="BMr-h3-Uzn" id="YaA-ld-DmB"/>
-                        <segue destination="zlk-tE-QfE" kind="show" identifier="PhotosViewSegue" id="QXr-HH-L8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yj-VX-L88" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="PC2-nC-Xl8"/>
             </objects>
             <point key="canvasLocation" x="164" y="-713.79310344827593"/>
         </scene>
@@ -67,8 +66,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXW-B6-2fb" userLabel="Photo Details View Image">
-                                <rect key="frame" x="4" y="62" width="370" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="4" y="62" width="370" height="319"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGT-UR-BxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="-708"/>
+            <point key="canvasLocation" x="949.60000000000002" y="-708.39580209895053"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2WH-h2-705">
